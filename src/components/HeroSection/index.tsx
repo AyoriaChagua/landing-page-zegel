@@ -8,7 +8,7 @@ export default function HeroSection() {
             <div className='mb-5 md:mb-0 md:w-1/2 lg:w-7/12 flex flex-col justify-center'>
                 <div className='flex flex-row items-center gap-10'>
                     <div className='flex flex-col'>
-                        <span className='text-4xl md:text-5xl lg:text-7xl font-extrabold mb-4 text-red-500 title'>POTENCIA TU ÉXITO ACADÉMICO CONS NUESTRA ASESORÍA ESTUDIANTIL</span>
+                        <span className='text-4xl md:text-5xl lg:text-7xl font-extrabold mb-4 text-red-500 title'>POTENCIA TU ÉXITO ACADÉMICO CON NUESTRA ASESORÍA ESTUDIANTIL</span>
                     </div>
                 </div>
                 <div className='mt-16'>
