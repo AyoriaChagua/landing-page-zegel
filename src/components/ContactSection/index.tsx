@@ -11,9 +11,9 @@ export default function ContactSection() {
                 </div>
                 <p className='w-1/4 text-3xl text-white font-bold'>¡Ahora tú eliges, nosotros te ayudamos a avanzar!</p>
             </div>
-            <div className="p-5 flex  flex-row justify-between xl:mx-28 lg:mx-15 md:mx-6 sm:mx-3 mt-10">
-                <div className='flex flex-col '>
-                    <p className='text-5xl w-1/2 title' style={{ color: "#4F0A3D" }}>Da el <b className='text-red-500'>primer paso</b> hacia tu éxito académico</p>
+            <div className="p-5 flex flex-col md:flex-row justify-between xl:mx-28 lg:mx-15 md:mx-6 sm:mx-3 mt-10">
+                <div className='flex flex-col w-full md:w-1/2'>
+                    <p className='text-5xl md:text-4xl sm:text-3xl title' style={{ color: "#4F0A3D" }}>Da el <b className='text-red-500'>primer paso</b> hacia tu éxito académico</p>
                     <ul className='mt-10'>
                         <li className='mt-4'>
                             <PhoneOutlined className='text-red-500 text-2xl' />
@@ -29,10 +29,9 @@ export default function ContactSection() {
                         </li>
                     </ul>
                 </div>
-                <div className='flex w-1/3'>
+                <div className='flex w-full md:w-1/2 mt-6 md:mt-0'>
                     <FormContact />
                 </div>
-
             </div>
         </>
     );
