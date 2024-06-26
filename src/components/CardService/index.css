@@ -1,0 +1,36 @@
+.description {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.w-80 {
+    width: 20rem; /* 320px */
+}
+
+.h-80 {
+    height: 20rem; /* 320px */
+}
+
+.description-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.description-container.expanded {
+    max-height: 200px; /* Ajusta este valor según sea necesario */
+}
+
+.description {
+    margin: 0;
+    padding: 10px 0;
+}

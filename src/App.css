@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(255, 248, 248);
+}
+
+.custom-float-icon{
+    color: #25D366
+}
+
+.custom-float-icon:hover {
+    color: #fff
+}

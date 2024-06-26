@@ -1,0 +1,12 @@
+body {
+    padding-top: 60px;
+}
+
+header {
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.bg-white {
+    backdrop-filter: blur(10px);
+}
+
