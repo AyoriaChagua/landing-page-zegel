@@ -26,7 +26,7 @@ export default function HeroSection() {
             </div>
             {/* hacer collage */}
             <div className='w-full md:w-1/2 lg:w-4/12'>
-                <img src='/img/hero.png' />
+                <img src='/landing-page-zegel/img/hero.png' />
             </div>
         </div>
     )

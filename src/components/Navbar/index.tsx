@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <header className={`p-2 fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
       <nav className='flex items-center justify-between relative'>
-        <img src="/zegel.svg" height={30} width={30} alt="Logo" className="z-10" />
+        <img src="/landing-page-zegel/zegel.svg" height={30} width={30} alt="Logo" className="z-10" />
         <div className='absolute left-1/2 transform -translate-x-1/2'>
           <h2 className='font-bold text-red-500 text-2xl'>ZEGEL</h2>
         </div>
