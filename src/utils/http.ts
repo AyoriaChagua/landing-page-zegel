@@ -1,0 +1,1 @@
+export const endpoint = "http://190.116.6.12:9090/api/usuario/tracking"
