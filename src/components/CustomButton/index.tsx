@@ -33,13 +33,12 @@ export default function CustomButton({ icon, text, onClick, className, href, tar
         <a
             href={href}
             target={target}
-            className={`inline-flex items-center ${buttonSize} ${buttonColor} text-white font-bold rounded ${className}`}
-            onClick={onClick}
+            className={`inline-flex items-center gap-5 text-xl ${buttonSize} ${buttonColor} text-white font-bold rounded-xl ${className}`}
             aria-disabled={disabled}
             style={{ pointerEvents: disabled ? 'none' : 'auto' }}
         >
-            {icon}
             <span className="ml-2">{text}</span>
+            {icon}
         </a>
     ) : (
         <button

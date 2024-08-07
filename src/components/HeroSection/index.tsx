@@ -1,4 +1,4 @@
-import { CarryOutOutlined } from '@ant-design/icons'
+import { CarryOutOutlined, InstagramOutlined } from '@ant-design/icons'
 import CustomButton from '../CustomButton'
 import './index.css'
 
@@ -21,6 +21,18 @@ export default function HeroSection() {
                         text='Reserva tu sesión de asesoria'
                         color='red'
                         type='large'
+                        
+                    />
+                </div>
+                <div className="mt-4">
+                    <CustomButton
+                        icon={<InstagramOutlined style={{ fontSize: 30 }} />}
+                        onClick={() => { }}
+                        text='Visitanos nuestro Instagram'
+                        color='red'
+                        type='large'
+                        href='https://www.instagram.com/zegel.sae/?hl=es'
+                        target='_blank'
                     />
                 </div>
             </div>

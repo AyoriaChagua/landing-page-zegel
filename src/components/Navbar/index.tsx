@@ -2,7 +2,8 @@ import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import './index.css';
 import { useState, useEffect } from 'react';
 
-export default function Navbar() {
+
+export default function Navbar({ showModal }: { showModal: () => void }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,9 +28,9 @@ export default function Navbar() {
       <nav className='flex items-center justify-between relative'>
         <img src="/landing-page-zegel/zegel.svg" height={30} width={30} alt="Logo" className="z-10" />
         <div className='absolute left-1/2 transform -translate-x-1/2'>
-          <h2 className='font-bold text-red-500 text-2xl'>ZEGEL</h2>
+          <h2 className='font-bold text-red-500 text-3xl'>ZEGEL</h2>
         </div>
-        <button 
+        <button
           className="md:hidden z-20"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -47,11 +48,17 @@ export default function Navbar() {
         `}>
           <li className="relative">
             <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-200 rounded-full -z-10 w-8 h-8 opacity-50 blur-sm"></span>
-            <a href="#" className="font-semibold px-4 py-2 block text-red-500">Inicio</a>
+            <a href="/" className="font-semibold px-4 py-2 block text-red-500 text-xl">Inicio</a>
           </li>
           <li className="relative">
             <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-200 rounded-full -z-10 w-8 h-8 opacity-50 blur-sm"></span>
-            <a href="#" className="font-semibold px-4 py-2 block text-red-500">Nosotros</a>
+            <a href="/" className="font-semibold px-4 py-2 block text-red-500 text-xl">Nosotros</a>
+          </li>
+          <li className="relative">
+            <button
+              onClick={showModal}
+              className="font-semibold px-4 py-2 text-red-500 text-xl hover:text-red-600 hover:border-red-600 transition-colors duration-300 border border-red-500 rounded-2xl"
+            >Seguimiento</button>
           </li>
         </ul>
       </nav>
