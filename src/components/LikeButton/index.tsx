@@ -35,7 +35,7 @@ export default function LikeButton({ userId = null, pageUrl }: Props) {
             onClick={handleLike}
             className={`p-2 rounded-full transition-colors duration-300 ${liked ? 'text-red-600' : 'text-gray-400'}`}
         >
-            {liked ? <HeartFilled className='text-red-500 text-3xl' size={24} /> : <HeartOutlined className='text-red-500 text-3xl' size={24} />}
+            {liked ? <HeartFilled className='text-red-500 text-2xl' size={24} /> : <HeartOutlined className='text-red-500 text-2xl' size={24} />}
         </button>
     );
 };
