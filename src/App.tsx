@@ -9,7 +9,7 @@ import { useApp } from './hooks/useApp'
 import TrackerModal from './components/TrackerModal'
 
 function App() {
-  const { handleCancel, handleOk, isModalOpen, showModal, userTracker } = useApp();
+  const { handleCancel, handleOk, isModalOpen, showModal, dataTracker } = useApp();
   return (
     <>
       <Navbar showModal={showModal}/>
@@ -23,7 +23,7 @@ function App() {
         handleCancel={handleCancel}
         handleOk={handleOk}
         isModalOpen={isModalOpen}
-        userTracker={userTracker}
+        dataTracker={dataTracker}
       />
     </>
   )

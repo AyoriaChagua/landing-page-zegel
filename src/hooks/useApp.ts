@@ -1,17 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { UserTracker } from '../utils/types';
+import { DataTracker } from '../utils/types';
 import postApp from '../api/post';
 import getApp from '../api/get';
 
 export const useApp = () => {
     const [userId, setUserId] = useState<null | string>(null);
-    const [userTracker, setUserTracker] = useState<UserTracker[]>([]);
+    const [dataTracker, setDataTracker] = useState<DataTracker>();
 
     const [isTracked, setIsTracked] = useState(false);
     const isInitialMount = useRef(true);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [hasLiked, setHasLiked] = useState(false);
 
     const showModal = () => {
         setIsModalOpen(true);
@@ -31,17 +33,25 @@ export const useApp = () => {
             (async () => {
                 if (isTracked) return;
                 let storedUserId = localStorage.getItem('userId');
+                const pageUrl = window.location.pathname;
+
                 if (!storedUserId) {
                     storedUserId = uuidv4();
-                    await postApp.userTracking({
-                        id_usuario: storedUserId,
-                        me_gusta: false
+                    await postApp.addVisit({
+                        page_url: pageUrl,
+                        user_id: storedUserId
                     });
                     localStorage.setItem('userId', storedUserId);
                 }
                 setUserId(storedUserId);
-                const dataUserTracker = await getApp.userTracking();
-                setUserTracker(dataUserTracker);
+                const likes = await getApp.getTotalLikes(pageUrl);
+                const visits = await getApp.getTotalVisits(pageUrl);
+                setDataTracker({
+                    likes: likes!,
+                    visits: visits!
+                });
+                const liked = await getApp.hasUserLiked(storedUserId, pageUrl);
+                setHasLiked(liked);
                 setIsTracked(true);
             })();
         }
@@ -49,10 +59,11 @@ export const useApp = () => {
 
     return {
         userId,
-        userTracker,
+        dataTracker,
         isModalOpen,
         showModal,
         handleOk,
-        handleCancel
+        handleCancel,
+        hasLiked
     };
 };

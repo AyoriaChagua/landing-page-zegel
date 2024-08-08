@@ -1,1 +1,8 @@
-export const endpoint = "http://190.116.6.12:9090/api/usuario/tracking"
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL!;
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY!;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+export default supabase;

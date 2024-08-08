@@ -7,7 +7,7 @@ export default function TrackerModal({
   handleCancel,
   handleOk,
   isModalOpen,
-  userTracker
+  dataTracker
 }: TrackerModalProps) {
 
   const credentials = {
@@ -52,7 +52,7 @@ export default function TrackerModal({
             <div className='flex flex-col items-center'>
               <div className='flex flex-row gap-4'>
                 <EyeOutlined className='text-2xl text-blue-500' />
-                <span className='text-2xl text-blue-500'>{userTracker?.length}</span>
+                <span className='text-2xl text-blue-500'>{dataTracker?.visits}</span>
               </div>
               <span className='text-2xl text-blue-500'>Visitas</span>
             </div>
@@ -62,7 +62,7 @@ export default function TrackerModal({
             <div className='flex flex-col items-center'>
               <div className='flex flex-row gap-4'>
                 <HeartOutlined className='text-2xl text-red-500' />
-                <span className='text-2xl text-red-500'>{userTracker?.filter(track => track.me_gusta).length}</span>
+                <span className='text-2xl text-red-500'>{dataTracker?.likes}</span>
               </div>
               <span className='text-2xl text-red-500'>Me gusta</span>
             </div>
